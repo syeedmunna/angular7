@@ -1,1 +1,10 @@
-<h1>Home content</h1>
+<h3>Interpolation</h3>
+<p>Hello, {{ title }}</p>
+<h3>Property and Event binding</h3>
+<img [src]="imagePath" alt="" class="image-prop" />
+<button type="button" (click)="toggleMe()" [disabled]="isDisabled">
+  Click me!
+</button>
+<h3>Two way binding</h3>
+<input type="text" [(ngModel)]="name" />
+<p>Hello {{ name }}</p>
