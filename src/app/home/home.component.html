@@ -1,10 +1,41 @@
 <h3>Interpolation</h3>
 <p>Hello, {{ title }}</p>
 <h3>Property and Event binding</h3>
-<img [src]="imagePath" alt="" class="image-prop" />
+<!-- <img [src]="imagePath" alt="" class="image-prop" /> -->
 <button type="button" (click)="toggleMe()" [disabled]="isDisabled">
   Click me!
 </button>
 <h3>Two way binding</h3>
 <input type="text" [(ngModel)]="name" />
 <p>Hello {{ name }}</p>
+<h3>Usage of ngif and ngfor</h3>
+
+<ul *ngFor="let fruit of fruits">
+  <li *ngIf="fruit.display && fruit.price > 50">
+    {{ fruit.name }} {{ fruit.price }}
+  </li>
+  <!-- <li *ngIf="isDisabled">{{ fruit.name }} {{ fruit.price }}</li> -->
+</ul>
+<h3>Built-in Pipes</h3>
+<p>This is lowercase pipe {{ lowerCasePipeName | lowercase }}</p>
+<p>This is uppercase pipe {{ "helLo" | uppercase }}</p>
+
+<p>This is Date pipe {{ todayDate | date: "medium" }}</p>
+
+<p>This is Currency pipe {{ 45.88 | currency: "EUR" }}</p>
+
+<p>This is Number pipe {{ 454.78787814 | number: "3.2-3" }}</p>
+
+<p>This is Percent pipe {{ 0.5845 | percent }}</p>
+
+<h3>Custom Pipes</h3>
+<p>This is sqrt pipe {{ 8 | sqrt }}</p>
+<h1>Angular Material</h1>
+<h4>Buttons</h4>
+<h3>Basic Buttons</h3>
+<div class="example-button-row">
+  <button mat-raised-button color="accent">Basic</button>
+</div>
+
+<h4>Checkbox</h4>
+<mat-checkbox>Check me!</mat-checkbox>

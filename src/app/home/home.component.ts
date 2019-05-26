@@ -9,15 +9,26 @@ export class HomeComponent implements OnInit {
   title: string;
   isDisabled: boolean;
   imagePath: string;
-  name:string;
-  constructor() {}
+  name: string;
+  fruits = [];
+  lowerCasePipeName: string;
+  todayDate = new Date();
+  constructor() {
+    this.lowerCasePipeName = "HELLO ANGULAR";
+  }
 
   ngOnInit() {
     this.title = "Welcome to home page";
     this.imagePath = "../../assets/images/dog.jpg";
     this.isDisabled = false;
     this.name = "Raj";
-
+    this.fruits = [
+      { name: "Orange", price: 50, display: true },
+      { name: "Apple", price: 80, display: false },
+      { name: "Banana", price: 90, display: false },
+      { name: "Grapes", price: 150, display: true },
+      { name: "Mango", price: 20, display: false }
+    ];
   }
 
   toggleMe() {
