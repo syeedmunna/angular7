@@ -1,0 +1,8 @@
+.example-container > * {
+  width: 100%;
+}
+.test{
+font-size: 45px;
+cursor: pointer;
+color: chocolate;
+}
