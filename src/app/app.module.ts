@@ -9,6 +9,7 @@ import { LoginComponent } from "./login/login.component";
 import { AboutComponent } from "./about/about.component";
 import { SqrtPipe } from "./sqrt.pipe";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 
 import {
   MatButtonModule,
@@ -16,11 +17,17 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatRadioModule, MatCardModule
+  MatIconModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule,
+  MatRadioModule,
+  MatCardModule
 } from "@angular/material";
-import { NavigationComponent } from './navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { NavigationComponent } from "./navigation/navigation.component";
+import { LayoutModule } from "@angular/cdk/layout";
+import { EmployeeFormComponent } from "./employee-form/employee-form.component";
+import { EmployeeService } from "./employee.service";
 
 @NgModule({
   declarations: [
@@ -35,6 +42,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -51,7 +59,7 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
     MatCardModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

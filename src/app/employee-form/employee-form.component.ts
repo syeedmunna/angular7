@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { EmployeeService } from "../employee.service";
 
 @Component({
   selector: "app-employee-form",
@@ -7,7 +8,10 @@ import { FormBuilder, Validators } from "@angular/forms";
   styleUrls: ["./employee-form.component.css"]
 })
 export class EmployeeFormComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private employeeService: EmployeeService
+  ) {}
 
   addressForm = this.fb.group({
     company: null,
@@ -18,13 +22,14 @@ export class EmployeeFormComponent {
     state: [null, Validators.required],
     postalCode: [
       null,
-      Validators.compose([
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(5)
-      ])
+      Validators.compose([Validators.required, Validators.pattern("[0-9]{6}")])
     ],
-    employeeId: [null, Validators.required]
+    employeeId: [null, Validators.required],
+    phoneNumber: [
+      null,
+      Validators.compose([Validators.required, Validators.pattern("[0-9]{10}")])
+    ],
+    email: [null, Validators.compose([Validators.required, Validators.email])]
   });
 
   hasUnitNumber = false;
@@ -36,6 +41,18 @@ export class EmployeeFormComponent {
   ];
 
   onSubmit() {
-    alert("Thanks!");
+    if (this.addressForm.invalid) {
+      return false;
+    }
+    // console.log(this.addressForm.value);
+    this.employeeService.createEmployee(this.addressForm.value)
+    .subscribe(
+      success => {
+        console.log("success");
+      },
+      error => {
+        console.log("error");
+      }
+    );
   }
 }
