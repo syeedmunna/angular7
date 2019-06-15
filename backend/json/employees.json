@@ -1,0 +1,67 @@
+[
+  {
+    "company": "new post",
+    "firstName": "Siddu",
+    "lastName": "my new post",
+    "address": "sfd",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "postalCode": 354354,
+    "employeeId": "1",
+    "phoneNumber": 1020304050,
+    "email": "test@gmail.com",
+    "_id": "b08538d9b56844d597ea40ec14a07ed7"
+  },
+  {
+    "company": "new post",
+    "firstName": "Syeed",
+    "lastName": "my new post",
+    "address": "sfd",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "postalCode": 354354,
+    "employeeId": "1",
+    "phoneNumber": 1020304050,
+    "email": "test@gmail.com",
+    "_id": "6b3d73f2061841e4a860094a37320f07"
+  },
+  {
+    "company": "VMD",
+    "firstName": "Raj",
+    "lastName": "fdg",
+    "address": "fdg",
+    "city": "Bengaluru",
+    "state": "Telangana",
+    "postalCode": 324344,
+    "employeeId": "324",
+    "phoneNumber": 3243243432,
+    "email": "test@gmail.com",
+    "_id": "d1baf6d40bb94193a0c8f7da005ee178"
+  },
+  {
+    "company": "VMD1",
+    "firstName": "TRST",
+    "lastName": "sadsa",
+    "address": "ewre",
+    "city": "Bengaluru",
+    "state": "Andra Pradesh",
+    "postalCode": 354354,
+    "employeeId": "12345",
+    "phoneNumber": 3543543543,
+    "email": "test@gmail.com",
+    "_id": "831731ad9c8346f7a8ea4bcbeea79eae"
+  },
+  {
+    "company": "VMD2",
+    "firstName": "Siddu1",
+    "lastName": "my new post",
+    "address": "sad",
+    "city": "Bengaluru",
+    "state": "Andra Pradesh",
+    "postalCode": 354355,
+    "employeeId": "324",
+    "phoneNumber": 4354354354,
+    "email": "test@gmail.com",
+    "_id": "2559f7646300400fbffcfd140579e044"
+  }
+]

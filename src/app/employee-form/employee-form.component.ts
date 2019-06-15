@@ -8,6 +8,7 @@ import { EmployeeService } from "../employee.service";
   styleUrls: ["./employee-form.component.css"]
 })
 export class EmployeeFormComponent {
+  statusMessage: string;
   constructor(
     private fb: FormBuilder,
     private employeeService: EmployeeService
@@ -45,10 +46,10 @@ export class EmployeeFormComponent {
       return false;
     }
     // console.log(this.addressForm.value);
-    this.employeeService.createEmployee(this.addressForm.value)
-    .subscribe(
-      success => {
-        console.log("success");
+    this.employeeService.createEmployee(this.addressForm.value).subscribe(
+      (success: any) => {
+        // console.log(success.message);
+        this.statusMessage = success.message;
       },
       error => {
         console.log("error");

@@ -1,5 +1,8 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
+    <div class="alert alert-success" *ngIf="statusMessage">
+      <strong>Success!</strong> {{ statusMessage }}
+    </div>
     <mat-card-header>
       <mat-card-title>Employee Form</mat-card-title>
     </mat-card-header>

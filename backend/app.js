@@ -32,8 +32,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+// app.use("/", indexRouter);
+// app.use("/users", usersRouter);
 app.use("/employee", employeeRouter);
 
 // catch 404 and forward to error handler
