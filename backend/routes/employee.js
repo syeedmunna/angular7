@@ -5,6 +5,7 @@ var db = require("diskdb");
 var path = require("path");
 var _ = require("lodash");
 
+var employeesJson = require("../json/employees.json");
 /* POST employee */
 router.post("/create-employee", cors(), function(req, res, next) {
   db = db.connect(path.join(__dirname, "../json"), ["employees"]);
@@ -13,6 +14,19 @@ router.post("/create-employee", cors(), function(req, res, next) {
   res
     .status(401)
     .send({ status: 401, message: "internal error", type: "internal" });
+});
+
+// Get employees
+router.get("/list-employee", cors(), function(req, res, next) {
+  res.send(employeesJson);
+});
+
+// Get employee
+router.get("/view-employee/:empId", cors(), function(req, res) {
+  var empId = req.params.empId;
+  db = db.connect(path.join(__dirname, "../json"), ["employees"]);
+  var optinData = db.employees.findOne({ employeeId: empId });
+  res.send(optinData);
 });
 
 module.exports = router;

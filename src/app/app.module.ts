@@ -22,12 +22,17 @@ import {
   MatSidenavModule,
   MatListModule,
   MatRadioModule,
-  MatCardModule
+  MatCardModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule
 } from "@angular/material";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { EmployeeFormComponent } from "./employee-form/employee-form.component";
 import { EmployeeService } from "./employee.service";
+import { EmployeeListComponent } from "./employee-list/employee-list.component";
+import { EmployeeViewComponent } from './employee-view/employee-view.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,9 @@ import { EmployeeService } from "./employee.service";
     AboutComponent,
     SqrtPipe,
     NavigationComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    EmployeeListComponent,
+    EmployeeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,9 @@ import { EmployeeService } from "./employee.service";
     MatListModule,
     MatRadioModule,
     MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     ReactiveFormsModule
   ],
   providers: [EmployeeService],

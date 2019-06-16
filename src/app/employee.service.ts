@@ -14,4 +14,14 @@ export class EmployeeService {
       employee
     );
   }
+
+  listEmployee() {
+    return this.http.get("http://localhost:3000/employee/list-employee");
+  }
+
+  viewEmployee(empId: string) {
+    return this.http.get(
+      `http://localhost:3000/employee/view-employee/${empId}`
+    );
+  }
 }
