@@ -13,7 +13,8 @@ const appRoutes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "employee-form", component: EmployeeFormComponent },
   { path: "employee-list", component: EmployeeListComponent },
-  { path: "employee-list/view/:empId", component: EmployeeViewComponent }
+  { path: "employee-list/view/:empId", component: EmployeeViewComponent },
+  { path: "employee-list/edit/:empId", component: EmployeeFormComponent }
 ];
 
 @NgModule({

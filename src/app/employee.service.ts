@@ -14,6 +14,13 @@ export class EmployeeService {
       employee
     );
   }
+  updateEmployee(employee: any, empId: string) {
+    console.log(employee);
+    return this.http.put(
+      `http://localhost:3000/employee/update-employee/${empId}`,
+      employee
+    );
+  }
 
   listEmployee() {
     return this.http.get("http://localhost:3000/employee/list-employee");
@@ -22,6 +29,11 @@ export class EmployeeService {
   viewEmployee(empId: string) {
     return this.http.get(
       `http://localhost:3000/employee/view-employee/${empId}`
+    );
+  }
+  deleteEmployee(empId: string) {
+    return this.http.delete(
+      `http://localhost:3000/employee/delete-employee/${empId}`
     );
   }
 }

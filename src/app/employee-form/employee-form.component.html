@@ -119,7 +119,7 @@
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col">
+        <div class="col" *ngIf="!isDisableEmployee">
           <mat-form-field class="full-width">
             <input
               matInput
@@ -181,7 +181,12 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <div *ngIf="myEmpId; else otherBlock">
+        <button mat-raised-button color="primary" type="submit">Update</button>
+      </div>
+      <ng-template #otherBlock>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </ng-template>
     </mat-card-actions>
   </mat-card>
 </form>

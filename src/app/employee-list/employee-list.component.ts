@@ -4,6 +4,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
 
 import { EmployeeService } from "../employee.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-employee-list",
@@ -11,12 +12,22 @@ import { EmployeeService } from "../employee.service";
   styleUrls: ["./employee-list.component.css"]
 })
 export class EmployeeListComponent implements OnInit {
-  displayedColumns: string[] = ["firstName", "city", "state", "phoneNumber","status"];
+  statusMessage: string;
+  displayedColumns: string[] = [
+    "firstName",
+    "city",
+    "state",
+    "phoneNumber",
+    "status"
+  ];
   dataSource: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.employeeService.listEmployee().subscribe(
@@ -38,5 +49,18 @@ export class EmployeeListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  deleteEmployee(empId: string) {
+    this.employeeService.deleteEmployee(empId).subscribe(
+      (success: any) => {
+        console.log(success.message);
+        this.statusMessage = success.message;
+        this.router.navigate(['/']);
+      },
+      error => {
+        console.log("error");
+      }
+    );
   }
 }

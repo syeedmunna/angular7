@@ -29,4 +29,26 @@ router.get("/view-employee/:empId", cors(), function(req, res) {
   res.send(optinData);
 });
 
+// Update an employee
+router.put("/update-employee/:empId", cors(), function(req, res, next) {
+  db = db.connect(path.join(__dirname, "../json"), ["employees"]);
+
+  var query = {
+    employeeId: req.params.empId
+  };
+  var options = {
+    multi: false,
+    upsert: false
+  };
+
+  var updated = db.employees.update(query, req.body, options);
+  res.send({ message: "Employee successfully updated" });
+});
+
+// Delete an emplyee
+router.delete("/delete-employee/:empId", cors(), function(req, res, next) {
+  db = db.connect(path.join(__dirname, "../json"), ["employees"]);
+  db.employees.remove({ employeeId: req.params.empId }, true);
+  res.send({ message: "Employee removed" });
+});
 module.exports = router;

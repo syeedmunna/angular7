@@ -1,3 +1,6 @@
+<div class="alert alert-danger" *ngIf="statusMessage">
+  <strong>Delete!</strong> {{ statusMessage }}
+</div>
 <mat-form-field>
   <input
     matInput
@@ -42,23 +45,24 @@
         >
           View
         </a>
-        <!-- &nbsp;
+        &nbsp;
         <a
           mat-stroked-button
           color="accent"
           [routerLink]="['edit', element.employeeId]"
           title="Edit"
         >
-          Edit </a
-        > -->
-        <!-- <a
+          Edit
+        </a>
+        &nbsp;
+        <a
           mat-stroked-button
           color="warn"
           (click)="deleteEmployee(element.employeeId)"
           title="Delete"
         >
           Delete
-        </a> -->
+        </a>
       </td>
     </ng-container>
 
