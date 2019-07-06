@@ -27,12 +27,17 @@ import {
   MatSortModule,
   MatPaginatorModule
 } from "@angular/material";
+import { ModalModule } from "ngx-bootstrap";
+
 import { NavigationComponent } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { EmployeeFormComponent } from "./employee-form/employee-form.component";
 import { EmployeeService } from "./employee.service";
 import { EmployeeListComponent } from "./employee-list/employee-list.component";
-import { EmployeeViewComponent } from './employee-view/employee-view.component';
+import { EmployeeViewComponent } from "./employee-view/employee-view.component";
+import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,10 @@ import { EmployeeViewComponent } from './employee-view/employee-view.component';
     NavigationComponent,
     EmployeeFormComponent,
     EmployeeListComponent,
-    EmployeeViewComponent
+    EmployeeViewComponent,
+    WarningAlertComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -67,9 +75,11 @@ import { EmployeeViewComponent } from './employee-view/employee-view.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ],
   providers: [EmployeeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [WarningAlertComponent]
 })
 export class AppModule {}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { EmployeeService } from "../employee.service";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { WarningAlertComponent } from "../warning-alert/warning-alert.component";
 
 @Component({
   selector: "app-employee-view",
@@ -9,10 +11,13 @@ import { EmployeeService } from "../employee.service";
 })
 export class EmployeeViewComponent implements OnInit {
   employeeDetails: any;
+  modalRef: BsModalRef;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private router: Router,
+    private modalService: BsModalService
   ) {}
 
   ngOnInit() {
@@ -31,5 +36,10 @@ export class EmployeeViewComponent implements OnInit {
         );
       }
     });
+  }
+
+  deleteEmployee(empId: string) {
+    this.modalRef = this.modalService.show(WarningAlertComponent);
+    this.modalRef.content.param = empId;
   }
 }

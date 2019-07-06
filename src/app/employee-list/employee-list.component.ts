@@ -2,9 +2,11 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatSort } from "@angular/material/sort";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 
 import { EmployeeService } from "../employee.service";
 import { Router } from "@angular/router";
+import { WarningAlertComponent } from "../warning-alert/warning-alert.component";
 
 @Component({
   selector: "app-employee-list",
@@ -13,6 +15,7 @@ import { Router } from "@angular/router";
 })
 export class EmployeeListComponent implements OnInit {
   statusMessage: string;
+  modalRef: BsModalRef;
   displayedColumns: string[] = [
     "firstName",
     "city",
@@ -26,7 +29,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private router: Router
+    private router: Router,
+    private modalService: BsModalService
   ) {}
 
   ngOnInit() {
@@ -52,15 +56,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   deleteEmployee(empId: string) {
-    this.employeeService.deleteEmployee(empId).subscribe(
-      (success: any) => {
-        console.log(success.message);
-        this.statusMessage = success.message;
-        this.router.navigate(['/']);
-      },
-      error => {
-        console.log("error");
-      }
-    );
+    this.modalRef = this.modalService.show(WarningAlertComponent);
+    this.modalRef.content.param = empId;
   }
 }
