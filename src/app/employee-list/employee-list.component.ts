@@ -16,6 +16,7 @@ import { WarningAlertComponent } from "../warning-alert/warning-alert.component"
 export class EmployeeListComponent implements OnInit {
   statusMessage: string;
   modalRef: BsModalRef;
+  globalMessage: any;
   displayedColumns: string[] = [
     "firstName",
     "city",
@@ -34,6 +35,9 @@ export class EmployeeListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.employeeService.currentMessage.subscribe(
+      receiveMessage => (this.globalMessage = receiveMessage)
+    );
     this.employeeService.listEmployee().subscribe(
       (success: any) => {
         console.log(success);

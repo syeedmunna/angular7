@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { EmployeeService } from "../employee.service";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  selector: "app-about",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.css"]
 })
 export class AboutComponent implements OnInit {
+  constructor(private employeeService: EmployeeService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  storeData() {
+    const loginInfo = {
+      name: "Siddu",
+      empId: 102030
+    };
+    this.employeeService.changeMessage(loginInfo);
   }
-
 }

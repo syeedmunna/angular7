@@ -1,10 +1,22 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class EmployeeService {
+  private messageSource = new BehaviorSubject(""); // BehaviorSuject is used to store latest values
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(loginData: any) {
+    this.messageSource.next(loginData);
+  }
+
+  logout() {
+    this.messageSource.next("");
+  }
+
   constructor(private http: HttpClient) {}
 
   createEmployee(employee: any) {

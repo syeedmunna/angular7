@@ -7,3 +7,9 @@
 <h3>Child to Parent: Sharing Data via Output() and EventEmitter</h3>
 <app-child (messageEvent)="receiveMessage($event)"></app-child>
 <p *ngIf="childMessage">Parent : {{ childMessage }}</p>
+
+<div *ngIf="globalMessage">
+  <h3>Global message</h3>
+  <p>This is global message name: {{ globalMessage.name }}</p>
+  <p>This is global message emp id: {{ globalMessage.empId }}</p>
+</div>
