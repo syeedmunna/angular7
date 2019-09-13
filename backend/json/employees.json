@@ -1,15 +1,67 @@
 [
-  {
-    "company": "Comp-test",
-    "firstName": "Raghav-1",
-    "lastName": "H",
-    "address": "Vijayanagar",
-    "city": "Bengaluru",
-    "state": "Karnataka",
-    "postalCode": 102030,
-    "employeeId": "4",
-    "phoneNumber": 1020304050,
-    "email": "arjun@gmail.com",
-    "_id": "cb41951c1d814c91b870d38a147206cf"
-  }
+    {
+        "company": "vmd",
+        "firstName": "dhoni",
+        "lastName": "ms",
+        "address": "ranchi",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "postalCode": 203010,
+        "employeeId": "2",
+        "phoneNumber": 2030105040,
+        "email": "dhoni@gmail.com",
+        "_id": "b01487bc274245d1a4fa61ef3713200d"
+    },
+    {
+        "company": "VMD3",
+        "firstName": "kholi",
+        "lastName": "v",
+        "address": "delhi",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "postalCode": 203010,
+        "employeeId": "3",
+        "phoneNumber": 4050603020,
+        "email": "kholi@gmail.com",
+        "_id": "0621e06852ff4a11b7242e0b8781f25b"
+    },
+    {
+        "company": "VMD3",
+        "firstName": "kholi",
+        "lastName": "v",
+        "address": "delhi",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "postalCode": 203010,
+        "employeeId": "3",
+        "phoneNumber": 4050603020,
+        "email": "kholi@gmail.com",
+        "_id": "0621e06852ff4a11b7242e0b8781f25b"
+    },
+    {
+        "company": "VMD3",
+        "firstName": "kholi",
+        "lastName": "v",
+        "address": "delhi",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "postalCode": 203010,
+        "employeeId": "3",
+        "phoneNumber": 4050603020,
+        "email": "kholi@gmail.com",
+        "_id": "0621e06852ff4a11b7242e0b8781f25b"
+    },
+    {
+        "company": "vmd",
+        "firstName": "aaaa",
+        "lastName": "ff",
+        "address": "fdgffthjfh",
+        "city": "bhhygfv",
+        "state": "Andra Pradesh",
+        "postalCode": 203050,
+        "employeeId": "9",
+        "phoneNumber": 1234569870,
+        "email": "fhjy@gmail.com",
+        "_id": "8e89c87cbdba47dea9fdc81f25893cf8"
+    }
 ]
